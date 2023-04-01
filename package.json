@@ -1,0 +1,31 @@
+{
+  "name": "e-field",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npx vite . --host"
+  },
+  "author": "拆家大主教",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fabric": "^4.5.15",
+    "@types/vue": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^27.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "less": "^4.1.3",
+    "typescript": "*",
+    "vite": "^4.0.4"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.2",
+    "ajv": "^8.12.0",
+    "mathjs": "^11.5.0",
+    "uid": "^2.0.1",
+    "vue": "^3.2.47"
+  }
+}

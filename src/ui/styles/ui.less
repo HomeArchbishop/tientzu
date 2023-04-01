@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#main {
+  width: 100%;
+  #dashboard {
+    display: grid;
+    grid-template-areas: "nav stage"
+                         "console stage"
+                         "func stage";
+    grid-template-columns: 400px 620px;
+    grid-template-rows: 40px
+                        500px
+                        80px;
+    width: 1020px;
+    height: 620px;
+    margin: auto;
+    border: 1px solid black;
+    overflow: hidden;
+    @areaBorder: 1px solid #eee;
+    @border: 1px solid #eee;
+    #navBar {
+      grid-area: nav;
+      display: flex;
+      flex-direction: row;
+      border-bottom: @areaBorder;
+      border-right: @areaBorder;
+      .nav-choice {
+        line-height: 20px;
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        &:nth-child(2) {
+          border-right: @border;
+          border-left: @border;
+          border-bottom: @border;
+        }
+        &.active {
+          cursor: default;
+          background: #E6E6FA;
+        }
+      }
+    }
+    #console {
+      grid-area: console;
+      border-bottom: @areaBorder;
+      border-right: @areaBorder;
+      #consoleList {
+        width:400px;
+        height: 500px;
+        background-color: pink;
+      }
+      #consoleJson {
+        width: 400px;
+        height: 500px;
+        #textWrap {
+          width: 400px;
+          height: 500px;
+          textarea {
+            width: 399px;
+            height: 500px;
+            outline: none;
+            border: none;
+            resize: none;
+            box-sizing: border-box;
+            background-color: beige;
+          }
+        }
+      }
+    }
+    #functionBar {
+      grid-area: func;
+      display: flex;
+      flex-direction: row;
+      border-right: @areaBorder;
+      .btn {
+        line-height: 20px;
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        &:nth-child(2) {
+          border-right: @border;
+          border-left: @border;
+          border-bottom: @border;
+        }
+        &.active {
+          cursor: default;
+          background: #E6E6FA;
+        }
+      }
+    }
+    #stage {
+      grid-area: stage;
+      padding: 10px;
+    }
+  }
+}

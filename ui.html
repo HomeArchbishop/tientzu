@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-field</title>
+</head>
+<body>
+  <div id="main">
+    <div id="dashboard">
+      <div id="navBar">
+        <div
+          class="nav-choice" :class="{ active: consoleType === 'list' }"
+          @click="changeConsoleType('list')"
+        >条目</div>
+        <div
+          class="nav-choice" :class="{ active: consoleType === 'json' }"
+          @click="changeConsoleType('json')"
+        >JSON</div>
+      </div>
+      <div id="console">
+        <div id="consoleList" v-if="consoleType === 'list'"></div>
+        <div id="consoleJson" v-if="consoleType === 'json'">
+          <div id="textWrap">
+            <textarea name="" id="" v-model="jsonInputStr"></textarea>
+          </div>
+        </div>
+      </div>
+      <div id="functionBar">
+        <div class="btn" @click="simulate()">模拟</div>
+      </div>
+      <div id="stage">
+        <div id="svgDiv"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/ui/ui.ts"></script>
+  <script type="module" src="src/index.ts"></script>
+</body>
+</html>

@@ -16,18 +16,18 @@ interface FieldArea {
 }
 
 interface CreateFieldAreaOptions {
-  border: string | false | ((x: string | number | Fraction, y: string | number | Fraction) => boolean)
+  border: string | false | ((x: number, y: number) => boolean)
   E: {
-    x: string | number | Fraction
-    y: string | number | Fraction
+    x: number | Fraction
+    y: number | Fraction
   } | ((x: number, y: number, t: number) => {
-    x: string | number | Fraction
-    y: string | number | Fraction
+    x: number | Fraction
+    y: number | Fraction
   })
   B: {
-    z: string | number | Fraction
+    z: number | Fraction
   } | ((x: number, y: number, t: number) => {
-    z: string | number | Fraction
+    z: number | Fraction
   })
 }
 
@@ -52,7 +52,7 @@ class Field {
             return Boolean(math.evaluate(createFieldAreaOptions.border, { x, y }))
           }
           if (typeof createFieldAreaOptions.border === 'function') {
-            return Boolean(createFieldAreaOptions.border(x, y))
+            return Boolean(createFieldAreaOptions.border(math.number(x), math.number(y)))
           }
           throw new TypeError(
             'border option of field area is expected to be an object, number or function, but received' +
